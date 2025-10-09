@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adele</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f9e4e4, #e3d7f4);
+      color: #333;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 20px 0;
+    }
+
+    nav {
+      margin: 20px 0;
+    }
+
+    .nav-button {
+      display: block;
+      width: 200px;
+      margin: 10px auto;
+      padding: 12px;
+      background-color: #6c5ce7;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    .nav-button:hover {
+      background-color: #4834d4;
+      transform: scale(1.05);
+    }
+
+    .content {
+      display: none;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .adele-photo {
+      width: 350px;
+      border-radius: 20px;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .biographie {
+      font-family: "Georgia", serif;
+      font-size: 1.1em;
+      line-height: 1.6em;
+      text-align: justify;
+      margin: 20px auto;
+      max-width: 700px;
+    }
+
+    .song {
+      margin: 30px auto;
+      text-align: center;
+    }
+
+    .song img {
+      width: 220px;
+      border-radius: 12px;
+      margin-top: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 400px;
+      margin: auto;
+      text-align: left;
+    }
+
+    form input, form textarea {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 100%;
+    }
+
+    form input[type="submit"] {
+      background: #6c5ce7;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form input[type="submit"]:hover {
+      background: #4834d4;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Adele</h1>
+
+  <nav>
+    <a href="#" class="nav-button" onclick="showContent('accueil')">Accueil</a>
+    <a href="#" class="nav-button" onclick="showContent('musique')">Musique</a>
+    <a href="#" class="nav-button" onclick="showContent('contact')">Contact</a>
+  </nav>
+
+  <!-- ACCUEIL -->
+  <div id="accueil" class="content active">
+    <img src="https://i.guim.co.uk/img/media/0c5c17d81d17b13dd47d52cf5caaae1b6d2a25e5/0_0_5472_3283/master/5472.jpg?width=700&quality=85&auto=format&fit=max&s=ba7c2c7f57a0d6c2cfaf6d9e26f449e4" 
+         alt="Adele" class="adele-photo">
+
+    <div class="biographie">
+      <h2>Biographie</h2>
+      <p>
+        Adele Laurie Blue Adkins, connue sous le nom de scène Adele, est une chanteuse et auteure-compositrice britannique née le 5 mai 1988 à Tottenham, Londres. 
+        Elle est reconnue pour sa voix puissante et émotive, ainsi que pour ses chansons qui abordent des thèmes tels que l'amour, la perte et la résilience. 
+        Depuis ses débuts en 2008 avec l'album "19", elle a connu un succès mondial avec des albums comme "21", "25" et "30", remportant de nombreux prix, 
+        dont plusieurs Grammy Awards. Adele est également célèbre pour son style rétro et son approche authentique de la musique, ce qui lui a valu une base 
+        de fans dévouée à travers le monde.
+      </p>
+    </div>
+  </div>
+
+  <!-- MUSIQUE -->
+  <div id="musique" class="content">
+    <h2>Discographie</h2>
+
+    <div class="song">
+      <h3>Someone Like You</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/en/6/6d/Adele_-_21.png" alt="Someone Like You">
+    </div>
+
+    <div class="song">
+      <h3>Hello</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/en/8/85/Adele_-_Hello_%28Official_Single_Cover%29.png" alt="Hello">
+    </div>
+
+    <div class="song">
+      <h3>Rolling in the Deep</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/en/6/6d/Adele_-_21.png" alt="Rolling in the Deep">
+    </div>
+
+    <div class="song">
+      <h3>Easy On Me</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Adele_-_Easy_on_Me.png" alt="Easy On Me">
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" class="content">
+    <h2>Contact</h2>
+    <form action="#" method="post">
+      <label for="name">Nom :</label>
+      <input type="text" id="name" name="user_name" required>
+
+      <label for="mail">E-mail :</label>
+      <input type="email" id="mail" name="user_mail" required>
+
+      <label for="msg">Message :</label>
+      <textarea id="msg" name="user_message" rows="5" required></textarea>
+
+      <input type="submit" value="Envoyer">
+    </form>
+  </div>
+
+  <script>
+    function showContent(id) {
+      document.querySelectorAll('.content').forEach(div => div.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
